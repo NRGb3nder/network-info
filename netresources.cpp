@@ -62,8 +62,7 @@ void logerror(FILE *errlog, CONST CHAR *szMsg, DWORD dwErrcode)
     if (errlog) {
         if (dwErrcode == NO_ERR_CODE) {
             fprintf(errlog, szMsg, dwErrcode);
-        }
-        else {
+        } else {
             fprintf(errlog, szMsg);
         }
     }
@@ -86,45 +85,45 @@ void showResource(DWORD dwNesting, LPNETRESOURCE lpnrLocal)
 
     printf("{type: ");
     switch (lpnrLocal->dwType) {
-    case (RESOURCETYPE_ANY):
-        printf("any");
-        break;
-    case (RESOURCETYPE_DISK):
-        printf("disk");
-        break;
-    case (RESOURCETYPE_PRINT):
-        printf("print");
-        break;
-    default:
-        printf("unknown %X", lpnrLocal->dwDisplayType);
-        break;
+        case (RESOURCETYPE_ANY):
+            printf("any");
+            break;
+        case (RESOURCETYPE_DISK):
+            printf("disk");
+            break;
+        case (RESOURCETYPE_PRINT):
+            printf("print");
+            break;
+        default:
+            printf("unknown %X", lpnrLocal->dwDisplayType);
+            break;
     }
     printf(", display type: ");
     switch (lpnrLocal->dwDisplayType) {
-    case (RESOURCEDISPLAYTYPE_GENERIC):
-        printf("generic");
-        break;
-    case (RESOURCEDISPLAYTYPE_DOMAIN):
-        printf("domain");
-        break;
-    case (RESOURCEDISPLAYTYPE_SERVER):
-        printf("server");
-        break;
-    case (RESOURCEDISPLAYTYPE_SHARE):
-        printf("share");
-        break;
-    case (RESOURCEDISPLAYTYPE_FILE):
-        printf("file");
-        break;
-    case (RESOURCEDISPLAYTYPE_GROUP):
-        printf("group");
-        break;
-    case (RESOURCEDISPLAYTYPE_NETWORK):
-        printf("network");
-        break;
-    default:
-        printf("unknown %X", lpnrLocal->dwDisplayType);
-        break;
+        case (RESOURCEDISPLAYTYPE_GENERIC):
+            printf("generic");
+            break;
+        case (RESOURCEDISPLAYTYPE_DOMAIN):
+            printf("domain");
+            break;
+        case (RESOURCEDISPLAYTYPE_SERVER):
+            printf("server");
+            break;
+        case (RESOURCEDISPLAYTYPE_SHARE):
+            printf("share");
+            break;
+        case (RESOURCEDISPLAYTYPE_FILE):
+            printf("file");
+            break;
+        case (RESOURCEDISPLAYTYPE_GROUP):
+            printf("group");
+            break;
+        case (RESOURCEDISPLAYTYPE_NETWORK):
+            printf("network");
+            break;
+        default:
+            printf("unknown %X", lpnrLocal->dwDisplayType);
+            break;
     }
     printf("}\n");
 }
