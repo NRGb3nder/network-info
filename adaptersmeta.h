@@ -6,14 +6,14 @@
 
 struct AdapterMetaInfo
 {
-	CHAR szDesc[512];
-	CHAR szAddress[512];
+    CHAR szDesc[512];
+    CHAR szAddress[512];
 };
 
 struct AdapterMetaListNode
 {
-	struct AdapterMetaInfo *pInfo;
-	struct AdapterMetaListNode *pNext;
+    struct AdapterMetaInfo *pInfo;
+    struct AdapterMetaListNode *pNext;
 };
 
 BOOL getAdaptersMetaInfo(struct AdapterMetaListNode *pAdapterNode);
