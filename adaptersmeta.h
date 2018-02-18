@@ -8,8 +8,8 @@
 
 struct AdapterMetaInfo
 {
-	std::string desc;
-	std::string address;
+    std::string desc;
+    std::string address;
 };
 
 bool getAdaptersMetaInfo(std::vector<AdapterMetaInfo> &vMetaInfo);
