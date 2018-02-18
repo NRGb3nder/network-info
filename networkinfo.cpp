@@ -30,6 +30,14 @@ int main()
         printf("Call to EnumerateFunc failed");
     }
 
+    while (pCurrentNode = pAdapterList) {
+        pAdapterList = pAdapterList->pNext;
+        if (pCurrentNode->pInfo) {
+            free(pCurrentNode->pInfo);
+        }
+        free(pCurrentNode);               
+    }
+
     printf("\n");
     system("pause");
     return 0;
