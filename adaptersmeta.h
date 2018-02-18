@@ -2,14 +2,18 @@
 
 #include <winsock2.h>
 #include <iphlpapi.h>
-#include <vector>
-#include <string>
 #pragma comment(lib, "IPHLPAPI.lib")
 
 struct AdapterMetaInfo
 {
-    std::string desc;
-    std::string address;
+	CHAR szDesc[512];
+	CHAR szAddress[512];
 };
 
-bool getAdaptersMetaInfo(std::vector<AdapterMetaInfo> &vMetaInfo);
+struct AdapterMetaListNode
+{
+	struct AdapterMetaInfo *pInfo;
+	struct AdapterMetaListNode *pNext;
+};
+
+BOOL getAdaptersMetaInfo(struct AdapterMetaListNode *pAdapterNode);
