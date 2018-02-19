@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "adaptersmeta.h"
 
-BOOL getAdaptersMetaInfo(struct AdapterMetaListNode *pAdapterNode)
+BOOL WINAPI getAdaptersMetaInfo(struct AdapterMetaListNode *pAdapterNode)
 {
     IP_ADAPTER_INFO aAdapterInfo[32];
     PIP_ADAPTER_INFO pAdapterInfo = aAdapterInfo;

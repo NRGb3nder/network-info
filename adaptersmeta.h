@@ -16,4 +16,4 @@ struct AdapterMetaListNode
     struct AdapterMetaListNode *pNext;
 };
 
-BOOL getAdaptersMetaInfo(struct AdapterMetaListNode *pAdapterNode);
+BOOL WINAPI getAdaptersMetaInfo(struct AdapterMetaListNode *pAdapterNode);
