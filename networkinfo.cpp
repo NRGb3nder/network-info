@@ -4,7 +4,6 @@
 
 int main()
 {
-    LPNETRESOURCE lpnr = NULL;
     struct AdapterMetaListNode *pAdapterList;
     struct AdapterMetaListNode *pCurrentNode;
 
@@ -26,7 +25,7 @@ int main()
     }
 
     printf("NETWORK RESOURCES:\n\n");
-    if (enumerateResources(lpnr) == false) {
+    if (!enumerateResources()) {
         printf("Call to enumerateResources function failed");
     }
 
@@ -35,7 +34,7 @@ int main()
         if (pCurrentNode->pInfo) {
             free(pCurrentNode->pInfo);
         }
-        free(pCurrentNode);               
+        free(pCurrentNode);
     }
 
     printf("\n");
