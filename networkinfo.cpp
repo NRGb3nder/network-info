@@ -27,7 +27,7 @@ int main()
 
     printf("NETWORK RESOURCES:\n\n");
     if (enumerateResources(lpnr) == false) {
-        printf("Call to EnumerateFunc failed");
+        printf("Call to enumerateResources function failed");
     }
 
     while (pCurrentNode = pAdapterList) {

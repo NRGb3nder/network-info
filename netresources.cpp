@@ -17,13 +17,13 @@ BOOL WINAPI enumerateResources(LPNETRESOURCE lpnr, FILE *errlog, DWORD dwNesting
 
     dwResult = WNetOpenEnum(RESOURCE_GLOBALNET, RESOURCETYPE_ANY, 0, lpnr, &hEnum);
     if (dwResult != NO_ERROR) {
-        logerror(errlog, "WnetOpenEnum failed with error %d\n", dwResult);
+        logerror(errlog, "WNetOpenEnum failed with error %d\n", dwResult);
         return FALSE;
     }
 
     lpnrLocal = (LPNETRESOURCE) GlobalAlloc(GPTR, cbBuffer);
     if (lpnrLocal == NULL) {
-        logerror(errlog, "WnetOpenEnum failed with error %d\n", dwResult);
+        logerror(errlog, "WNetOpenEnum failed with error %d\n", dwResult);
         return FALSE;
     }
 
@@ -35,7 +35,7 @@ BOOL WINAPI enumerateResources(LPNETRESOURCE lpnr, FILE *errlog, DWORD dwNesting
                 showResource(dwNesting, &lpnrLocal[i]);
                 if (RESOURCEUSAGE_CONTAINER == (lpnrLocal[i].dwUsage & RESOURCEUSAGE_CONTAINER)) {
                     if (!enumerateResources(&lpnrLocal[i], errlog, dwNesting + 1)) {
-                        logerror(errlog, "EnumerateFunc returned FALSE\n");
+                        logerror(errlog, "enumerateResources function returned FALSE\n");
                     }
                 }
             }
